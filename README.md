@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# Budget application using React and Spring
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Budget application inspired by [this](https://www.youtube.com/watch?v=yz8x71BiGXg&t=2213s) YouTube tutorial but
+instead of only using [ReactJS](https://reactjs.org/), it is a full stack application using React with 
+[Typescript](https://www.typescriptlang.org/) and [Axios](https://github.com/axios/axios).
+The backend uses [Spring](https://spring.io/), [H2](https://www.h2database.com/html/main.html) database with a file
+and [Kotlin](https://kotlinlang.org/).
 
-## Available Scripts
+## How to run it
 
-In the project directory, you can run:
+Execute `npm start` in the `frontend` folder to start React on port 3000.
+Run the `BudgetApplication main` function in the `backend` folder to start Spring on port 8080 and the H2 database. 
+This will create a `data` folder in the root project folder with a `.db` file.
 
-### `npm start`
+Note that the controller classes of the backend use the `@CrossOrigin(origins = ["http://localhost:3000"])` annotation in order
+for axios to be able to make REST calls to your localhost on port 8080.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Functionality
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This application allows you to organize your expenses by defining different categories with a limit (=budget) and
+adding expenses to a pre-defined category or no category.
 
-### `npm test`
+![image](https://user-images.githubusercontent.com/93260/151671778-e1f29bdb-9275-4907-b468-c1ac52caa5d8.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/93260/151671856-6deef0e1-0ba6-4414-986d-b26d6a608461.png)
 
-### `npm run build`
+You can of course also view those expenses and delete them or delete an entire budget. Any expenses within a deleted
+budget get moved to the "No Category" expenses.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image](https://user-images.githubusercontent.com/93260/151671901-4b5ffd41-f81b-4c30-9f3d-204cdbd9b925.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
