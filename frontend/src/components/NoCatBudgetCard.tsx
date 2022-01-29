@@ -7,8 +7,9 @@ interface NoCatBudgetCardsProps {
 }
 
 export default ({onAddExpenseClick, onViewExpensesClick}: NoCatBudgetCardsProps) => {
-  const {getExpenses} = useBudgets()
-  const amount = getExpenses(NO_CAT_BUDGET_ID).reduce((sum, expense) => sum + expense.amount, 0)
+  const {expenses} = useBudgets()
+  const noCatExpenses = expenses.filter(it => it.budgetId === NO_CAT_BUDGET_ID)
+  const amount = noCatExpenses.reduce((sum, expense) => sum + expense.amount, 0)
 
   if (!amount) {
     return null

@@ -11,7 +11,7 @@ import ViewExpensesModal from "./components/ViewExpensesModal";
 export default () => {
   const [showAddBudgetModal, setShowBudgetModal] = useState(false)
   const [showAddExpenseModal, setShowExpenseModal] = useState(false)
-  const {budgets, getExpenses} = useBudgets()
+  const {budgets} = useBudgets()
   const [budgetIdForAddExpense, setBudgetIdForAddExpense] = useState(NO_CAT_BUDGET_ID)
   const [budgetIdForViewExpenses, setBudgetIdForViewExpenses] = useState<string | null>(null)
 
@@ -40,8 +40,8 @@ export default () => {
                 <BudgetCard
                   key={it.id}
                   name={it.name}
-                  spent={getExpenses(it.id).reduce((sum, expense) => sum + expense.amount, 0)}
-                  limit={it.limit}
+                  spent={it.expenses.reduce((sum, expense) => sum + expense.amount, 0)}
+                  limit={it.maxLimit}
                   onAddExpenseClick={() => showExpenseModal(it.id)}
                   onViewExpensesClick={() => setBudgetIdForViewExpenses(it.id)}
                 />

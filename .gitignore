@@ -1,17 +1,44 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
+/frontend/node_modules/
 /.pnp
 .pnp.js
 
-# testing
 /coverage
 
-# production
 /build
 
-# misc
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+.vscode/
+
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+/backend/build/
+
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
 .DS_Store
 .env.local
 .env.development.local
@@ -22,4 +49,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/.idea
+/data

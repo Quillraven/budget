@@ -4,7 +4,7 @@ import {useBudgets} from "../context/BudgetContext";
 export default () => {
   const {budgets, expenses} = useBudgets()
   const spent = expenses.reduce((sum, expense) => sum + expense.amount, 0)
-  const limit = budgets.reduce((sum, budget) => sum + budget.limit, 0)
+  const limit = budgets.reduce((sum, budget) => sum + budget.maxLimit, 0)
 
   if (!spent) {
     return null
